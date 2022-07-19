@@ -35,9 +35,9 @@ private:
 	void Move(float Value);
 	void Turn(float Value);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"), Category="Movement")
 		float MoveSpeed = 300.f;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"), Category="Movement")
 		float RotationSpeed = 100.f;
 
 	APlayerController* PlayerControllerRef;

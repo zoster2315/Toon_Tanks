@@ -30,6 +30,7 @@ void ATank::Turn(float Value)
 	DeltaRotation.Yaw = Value * DeltaTime * RotationSpeed;
 	AddActorLocalRotation(DeltaRotation, true);
 }
+
 // Called to bind functionality to input
 void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -37,6 +38,8 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &ATank::Move);
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &ATank::Turn);
+
+	PlayerInputComponent->BindAction(TEXT("Fire"), IE_Pressed, this, &ATank::Fire);
 }
 
 void ATank::BeginPlay()
