@@ -53,6 +53,11 @@ void AProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimi
 		return;
 	}
 
+	if (HitCameraShakeClass)
+	{
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(HitCameraShakeClass);
+	}
+
 	auto OwnerInstigator = Owner->GetInstigatorController();
 
 	if (OtherActor && OtherActor != this && OtherActor != MyOwner)

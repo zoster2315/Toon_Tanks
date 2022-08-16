@@ -45,6 +45,9 @@ void ABasePawn::HandleDestruction()
 
 	if (DeathSound)
 		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation(), GetActorRotation());
+
+	if (DeathCameraShakeClass)
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(DeathCameraShakeClass);
 	// TODO: Visual/Sound effects
 }
 
