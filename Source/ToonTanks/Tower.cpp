@@ -26,7 +26,7 @@ void ATower::BeginPlay()
 
 void ATower::CheckFireCondition()
 {
-	if (InFireRange())
+	if (InFireRange() && Tank->CheckTankIsAlive())
 		ATower::Fire();
 
 }
